@@ -11,7 +11,7 @@
   background-position: center;
 }
 
-.tinderCards__cardContainer {
+.myCards__cardContainer {
   display: flex;
   justify-content: center;
   margin-top: 10vh;

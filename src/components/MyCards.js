@@ -1,9 +1,9 @@
 import { SwipeableDrawer } from "@mui/material";
 import { React, useState } from "react";
 import TinderCard from "react-tinder-card";
-import "../TinderCards.css";
+import "../MyCards.css";
 
-function TinderCards() {
+function MyCards() {
   const [people, setPeople] = useState([
     {
       name: "Aleksandar",
@@ -32,8 +32,8 @@ function TinderCards() {
   };
 
   return (
-    <div className="TinderCards">
-      <div className="tinderCards__cardContainer">
+    <div className="MyCards">
+      <div className="myCards__cardContainer">
         {people.map((person) => (
           <TinderCard
             className="swipe"
@@ -55,4 +55,4 @@ function TinderCards() {
   );
 }
 
-export default TinderCards;
+export default MyCards;
