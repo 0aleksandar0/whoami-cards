@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import Header from "./components/Header";
 import MyCards from "./components/MyCards";
+import SwipeButtons from "./components/SwipeButtons";
 
 function App() {
   return (
@@ -9,7 +10,7 @@ function App() {
     <div className="app">
       <Header />
       <MyCards />
-      {/* SwipeButtons */}
+      <SwipeButtons />
     </div>
   );
 }
