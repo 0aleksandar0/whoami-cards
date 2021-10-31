@@ -1,0 +1,6 @@
+npx create-react-app tinder-clone
+npm install styled-components
+npm install @mui/material
+npm install @emotion/react
+npm install @emotion/styled
+npm i react-tinder-card
