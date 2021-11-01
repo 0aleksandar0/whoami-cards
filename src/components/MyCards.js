@@ -1,26 +1,20 @@
-import { React, useState } from "react";
+import { React, useEffect, useState } from "react";
 import TinderCard from "react-tinder-card";
 import "../MyCards.css";
+import axios from "../axios";
 
 function MyCards() {
-  const [people, setPeople] = useState([
-    {
-      name: "Aleksandar",
-      url: "/images/me.jpg",
-    },
-    {
-      name: "Rimma",
-      url: "/images/rimma.jpg",
-    },
-    {
-      name: "Leon",
-      url: "/images/leon.jpg",
-    },
-    {
-      name: "Maja",
-      url: "/images/maja.jpg",
-    },
-  ]);
+  const [people, setPeople] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const req = await axios.get("/whoami/cards");
+      setPeople(req.data); //set the setPeople for whatever requested data comes back
+    }
+    fetchData();
+  }, []); // the empty square brackets are used to run the code only once
+
+  console.log(people);
 
   const swiped = (direction, nameToDelete) => {
     console.log("revoming: " + nameToDelete);
@@ -42,7 +36,7 @@ function MyCards() {
             onCardLeftScreen={() => outOfFrame(person.name)}
           >
             <div
-              style={{ backgroundImage: `url(${person.url})` }}
+              style={{ backgroundImage: `url(${person.imgUrl})` }}
               className="card"
             >
               <h3>{person.name}</h3>

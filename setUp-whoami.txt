@@ -4,3 +4,5 @@ npm install @mui/material
 npm install @emotion/react
 npm install @emotion/styled
 npm i react-tinder-card
+# install axios to make http request simple
+npm i axios
